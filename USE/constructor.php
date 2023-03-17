@@ -6,8 +6,12 @@ class Student{
         $this ->age = $age;
         $this->address= $address;
     }
+
+    public function getdatastudent(){
+        return $this->name . $this ->age .$this ->address;
+    }
     public function getName(){
-        return $this->name;
+        return $this ->name;
     }
     public function getAge(){
         return $this->age;

@@ -1,6 +1,5 @@
 <?php 
 require 'constructor.php';
-$student= new Student('thi',15,"kontum");
 ?>
 <html>
     <body>
@@ -25,5 +24,22 @@ $student= new Student('thi',15,"kontum");
             </label> <br>
             <input type="submit" value="Enter" name="enter">
         </form>
+
+                    <br><br>
+        <div class="show">
+            <?php 
+            if(isset($_POST['enter']) and !empty($_POST['age']) and !empty($_POST['txt_name']) and !empty($_POST['txt_address'])){
+                $student= new Student($_POST['txt_name'],$_POST['age'], $_POST['txt_address']);
+                $name=$student->getName();
+                $age=$student->getAge();
+                $address =$student->getAddress();
+                ?>
+            <p><?php echo "My name is :".$name;?></p>
+            <p><?php echo "My age is :".$age;?></p>
+            <p><?php echo "My address is :".$address;?></p>
+                <?php
+            }
+            ?>
+        </div>
     </body>
 </html>
